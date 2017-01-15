@@ -80,6 +80,7 @@ store {
 ```
 menu {
     type: < str | "text", "image" > ,
+    date: null or < str | "%Y-%m-%d" ex. "2016-10-31" > ,
     time: < int | 0:아침, 1:점심, 2:저녁, 3:종일, 4:기타 > ,  
     name: null or < str > ,
     description: < str > ,              # type이 text인 경우 식단 정보를 보내드립니다.

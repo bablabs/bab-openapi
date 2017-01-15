@@ -69,9 +69,22 @@ location {
 store {
 	id: < str > ,
     name: < str > ,
+    description: null or < str > ,      # 식당에 대한 소개메세지입니다.
     open: null or < bool > ,			# 영업시간을 알 수 없는 경우, null을 보냅니다.
-    menus : [ < menu > ] ,              # menu object를 리스트 형식으로 보내드립니다.
+    phones: [ < str > ] ,               # 전화번호 리스트를 보냅니다. 
+    menus: [ < menu > ] ,               # menu object를 리스트 형식으로 보내드립니다.
+    menu_summary: null or < str > ,     # 어떤 메뉴를 파는 곳인지에 대한 요약입니다.
     menu_description: null or < str >   # menus의 길이가 0인 경우에, 왜 0인지 보내드립니다.
+    open_hours: null or {               # 영업시간과 관련된 정보입니다.
+        mon: < open_hour > ,            
+        tue: < open_hour > ,
+        wed: < open_hour > ,
+        thu: < open_hour > ,
+        fri: < open_hour > ,
+        sat: < open_hour > ,
+        sun: < open_hour > ,
+        description: < str > 
+    }
 }
 ```
 

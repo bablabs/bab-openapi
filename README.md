@@ -170,6 +170,7 @@ json {
 
 ```
 query {
+    type: null or < str | "campus"(default), "local", "delivery" > , # 기본이 "campus" 요청이라고 가정합니다.
     date: < str | "%Y-%m-%d", "2016-04-02" >
 }
 ```

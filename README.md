@@ -71,7 +71,7 @@ store {
     name: < str > ,
     description: null or < str > ,      # 식당에 대한 소개메세지입니다.
     open: null or < bool > ,			# 영업시간을 알 수 없는 경우, null을 보냅니다.
-    phones: [ < str > ] ,               # 전화번호 리스트를 보냅니다. 
+    phones: [ < str > ] ,               # 전화번호 리스트를 보냅니다.
     menus: [ < menu > ] ,               # menu object를 리스트 형식으로 보내드립니다.
     menu_summary: null or < str > ,     # 어떤 메뉴를 파는 곳인지에 대한 요약입니다.
     menu_description: null or < str >   # menus의 길이가 0인 경우에, 왜 0인지 보내드립니다.
@@ -83,7 +83,7 @@ store {
         fri: < open_hour > ,
         sat: < open_hour > ,
         sun: < open_hour > ,
-        description: < str > 
+        description: < str >
     }
 }
 ```
@@ -184,8 +184,14 @@ json {
 
 ```
 query {
-    type: null or < str | "campus"(default), "local", "delivery" > , # 기본이 "campus" 요청이라고 가정합니다.
+    type: null or < str | "cafeteria"(default), "campus", "local", "delivery" > ,
+    # 기본이 "cafeteria" 요청이라고 가정합니다.
+    # cafeteria는 급식제 식당을 의미합니다.
+    # campus는 급식제 식당이 아닌 교내 식당을 의미합니다.
+    # local은 campus 외부 식당을 의미합니다.
+    # delivery는 배달 식당을 의미합니다. 
     date: < str | "%Y-%m-%d", "2016-04-02" >
+    # 반드시 요청값에 포함해야 합니다. null로 보내시면 안됩니다.
 }
 ```
 
